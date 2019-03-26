@@ -18,6 +18,7 @@ class MempoolLimitTest(BitcoinTestFramework):
         relayfee = self.nodes[0].getnetworkinfo()['relayfee']
 
         self.log.info('Check that mempoolminfee is minrelytxfee')
+        print("Mempool info %s" % self.nodes[0].getmempoolinfo())
         assert_equal(self.nodes[0].getmempoolinfo()['minrelaytxfee'], Decimal('0.00001000'))
         assert_equal(self.nodes[0].getmempoolinfo()['mempoolminfee'], Decimal('0.00001000'))
 
